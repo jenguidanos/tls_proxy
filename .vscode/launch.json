@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug DC1",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=pe_ccs_tls_proxy",
+                    "--package=pe_ccs_tls_proxy"
+                ],
+                "filter": {
+                    "name": "pe_ccs_tls_proxy",
+                    "kind": "bin"
+                }
+            },
+            "env": {
+                "TLS_PROXY_HOST": "127.0.0.1",
+                "TLS_PROXY_PORT": "10020",
+                "TLS_PROXY_CPO_CERT": "cpo.cert",
+                "TLS_PROXY_PRIV_KEY": "secc.key",
+                "TLS_PROXY_CA_CERT": "ca.cert",
+                "CCS_CLIENT_IP": "127.0.0.1",
+                "CCS_CLIENT_PORT": "46190"
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
